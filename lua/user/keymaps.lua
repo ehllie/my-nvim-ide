@@ -52,6 +52,9 @@ keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 
+-- SudaVim --
+keymap("c", "w!!", "SudaWrite")
+
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 

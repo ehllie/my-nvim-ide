@@ -9,6 +9,9 @@ local servers = {
   "html",
   "tsserver",
   "pyright",
+  "rust_analyzer",
+  "volar",
+  "hls",
   "bashls",
   "jsonls",
   "yamlls",
@@ -37,6 +40,11 @@ for _, server in pairs(servers) do
   if server == "pyright" then
     local pyright_opts = require "user.lsp.settings.pyright"
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)
+  end
+
+  if server == "rust_analyzer" then
+    local rust_analyzer_opts = require "user.lsp.settings.rust_analyzer"
+    opts = vim.tbl_deep_extend("force", rust_analyzer_opts, opts)
   end
 
   lspconfig[server].setup(opts)
