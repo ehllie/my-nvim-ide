@@ -17,21 +17,41 @@ dap_install.setup({})
 
 dap_install.config("python", {})
 -- add other configs here
-
+-- require('dapui').setup(
+--   layouts = {
+--     {
+--       elements = {
+--         'scopes',
+--         'breakpoints',
+--         'stacks',
+--         'watches',
+--       },
+--       size = 40,
+--       position = 'left',
+--     },
+--     {
+--       elements = {
+--         'repl',
+--         'console',
+--       },
+--       size = 10,
+--       position = 'bottom',
+--     },
+--   },
+-- )
 dapui.setup({
-	sidebar = {
-		elements = {
-			{
-				id = "scopes",
-				size = 0.25, -- Can be float or integer > 1
+	layouts = {
+		{
+			elements = {
+				{
+					id = "scopes",
+					size = 0.25, -- Can be float or integer > 1
+				},
+				{ id = "breakpoints", size = 0.25 },
 			},
-			{ id = "breakpoints", size = 0.25 },
+			size = 40,
+			position = "right", -- Can be "left", "right", "top", "bottom"
 		},
-		size = 40,
-		position = "right", -- Can be "left", "right", "top", "bottom"
-	},
-	tray = {
-		elements = {},
 	},
 })
 
