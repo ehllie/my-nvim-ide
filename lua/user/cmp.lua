@@ -15,7 +15,7 @@ local check_backspace = function()
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
-vim.api.nvim_set_hl(0, "CmpItemKindCopilot", {fg = "#6CC644"})
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 
 local kind_icons = {
 	Text = "",
@@ -97,8 +97,6 @@ cmp.setup({
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
-
-
 			vim_item.kind = kind_icons[vim_item.kind]
 			vim_item.menu = ({
 				nvim_lsp = "",
@@ -109,16 +107,16 @@ cmp.setup({
 				emoji = "",
 			})[entry.source.name]
 
-      if entry.source.name == "copilot" then
-        vim_item.kind = ""
-        vim_item.kind_hl_group = "CmpItemKindCopilot"
-      end
+			if entry.source.name == "copilot" then
+				vim_item.kind = ""
+				vim_item.kind_hl_group = "CmpItemKindCopilot"
+			end
 
 			return vim_item
 		end,
 	},
 	sources = {
-    { name = "copilot" },
+		{ name = "copilot" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
