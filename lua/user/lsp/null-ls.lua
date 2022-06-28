@@ -7,7 +7,6 @@ end
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
-
 -- https://github.com/prettier-solidity/prettier-plugin-solidity
 null_ls.setup({
   debug = false,
@@ -18,7 +17,7 @@ null_ls.setup({
     }),
     formatting.black.with({ extra_args = { "--fast" } }),
     formatting.isort.with({ extra_args = { "--profile", "black" } }),
-    formatting.stylua.with({ extra_args = { "--indent_type", "spaces", "--indent_width", "2" } }),
+    formatting.stylua.with({ extra_args = { "--indent-type", "spaces", "--indent-width", "2" } }),
     formatting.google_java_format,
     formatting.rustfmt,
     diagnostics.flake8.with({ extra_args = { "--max-line-length", "--extend-ignore", "E203" } }),
