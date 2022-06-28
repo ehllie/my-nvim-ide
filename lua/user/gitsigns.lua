@@ -3,6 +3,7 @@ if not status_ok then
   return
 end
 
+-- Typo in this wrd
 gitsigns.setup({
   signs = {
     add = { hl = "GitSignsAdd", text = "▎", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
