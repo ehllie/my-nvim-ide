@@ -74,6 +74,7 @@ return packer.startup(function(use)
     "zbirenbaum/copilot-cmp",
     module = "copilot_cmp",
   })
+  use({ "Xuyuanp/scrollbar.nvim" })
 
   -- Colorschemes
   use({ "folke/tokyonight.nvim" })
