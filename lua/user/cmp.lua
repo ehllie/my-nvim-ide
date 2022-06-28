@@ -15,7 +15,7 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
-vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#A29BF1" })
 
 local kind_icons = {
   Text = "",
@@ -108,7 +108,7 @@ cmp.setup({
       })[entry.source.name]
 
       if entry.source.name == "copilot" then
-        vim_item.kind = ""
+        vim_item.kind = ""
         vim_item.kind_hl_group = "CmpItemKindCopilot"
       end
 
